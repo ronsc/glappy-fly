@@ -1,0 +1,11 @@
+<module rename-to='glappy'>
+  <inherits name='playn.PlayN'/>
+  <inherits name='GlappyAssets'/>
+
+  <source path='core'/>
+  <source path='html'/>
+
+  <public path="resources" />
+
+  <entry-point class='sut.cpe.edp.html.GlappyHtml'/>
+</module>

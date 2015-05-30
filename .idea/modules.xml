@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/glappy.iml" filepath="$PROJECT_DIR$/glappy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assets/glappy-assets.iml" filepath="$PROJECT_DIR$/assets/glappy-assets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/glappy-core.iml" filepath="$PROJECT_DIR$/core/glappy-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/glappy-java.iml" filepath="$PROJECT_DIR$/java/glappy-java.iml" />
+    </modules>
+  </component>
+</project>
