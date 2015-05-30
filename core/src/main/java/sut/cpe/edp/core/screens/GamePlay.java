@@ -1,10 +1,7 @@
 package sut.cpe.edp.core.screens;
 
-import static playn.core.PlayN.*;
-
 import org.jbox2d.callbacks.DebugDraw;
 import org.jbox2d.common.Vec2;
-import org.jbox2d.dynamics.Body;
 import org.jbox2d.dynamics.World;
 import playn.core.*;
 import playn.core.util.Clock;
@@ -14,7 +11,9 @@ import sut.cpe.edp.core.characters.Golang;
 import tripleplay.game.Screen;
 import tripleplay.game.ScreenStack;
 
-public class StartScreen extends Screen {
+import static playn.core.PlayN.graphics;
+
+public class GamePlay extends Screen {
 
     private ScreenStack ss;
     private static LoadImage loadImage;
@@ -28,7 +27,7 @@ public class StartScreen extends Screen {
 
     private Layer bgStripeLayer1, bgStripeLayer2;
 
-    public StartScreen(ScreenStack ss, LoadImage loadImage) {
+    public GamePlay(ScreenStack ss, LoadImage loadImage) {
         this.ss = ss;
         this.loadImage = loadImage;
     }
@@ -36,14 +35,14 @@ public class StartScreen extends Screen {
     @Override
     public void wasShown() {
         super.wasShown();
-        System.out.println("SCREEN : StartScreen");
+        System.out.println("SCREEN : GamePlay");
 
         // setup world and ground
         loadWorld = new LoadWorld();
         world = loadWorld.getWorld();
         // background image
         ImageLayer imgLayer = graphics().createImageLayer(loadImage.bgStartScreen);
-        this.layer.add(imgLayer);
+        //this.layer.add(imgLayer);
         // ground image
         bgStripeLayer1 = graphics().createImageLayer(loadImage.bgStripe);
         bgStripeLayer2 = graphics().createImageLayer(loadImage.bgStripe);
@@ -52,28 +51,14 @@ public class StartScreen extends Screen {
         this.layer.add(bgStripeLayer1);
         this.layer.add(bgStripeLayer2);
 
-        g = new Golang(world, 150, 200);
-        this.layer.add(g.layer());
-
-        Layer text = createTextLayer("Click to StartGame", 0xff000000);
-        text.setTranslation(width()/2f-120,height()/2f-30);
+        Layer text = createTextLayer("0", 0xffFFFFFF);
+        text.setTranslation(width() / 2f, 50);
         this.layer.add(text);
 
-        PlayN.pointer().setListener(new Pointer.Adapter(){
-            @Override
-            public void onPointerEnd(Pointer.Event event) {
-                ss.push(new GamePlay(ss, loadImage));
-            }
-        });
+        g = new Golang(world, 150, 200);
+        g.setHasStart(true);
+        this.layer.add(g.layer());
 
-//        PlayN.keyboard().setListener(new Keyboard.Adapter(){
-//            @Override
-//            public void onKeyUp(Keyboard.Event event) {
-//                if(event.key().equals(Key.ENTER)){
-//                    ss.push(new GamePlay(ss, loadImage));
-//                }
-//            }
-//        });
 
         // call show debug draw
         showdebugdraw();
@@ -94,6 +79,7 @@ public class StartScreen extends Screen {
         }
         bgStripeLayer1.setTranslation(bgStripeLayer1.tx() - 2, bgStripeLayer1.ty());
         bgStripeLayer2.setTranslation(bgStripeLayer2.tx() - 2, bgStripeLayer2.ty());
+
     }
 
     @Override
@@ -108,12 +94,14 @@ public class StartScreen extends Screen {
     }
 
     static Layer createTextLayer(String text, Integer color) {
-        Font font = graphics().createFont("Helvetica", Font.Style.PLAIN, 24);
+        Font font = graphics().createFont("Helvetica", Font.Style.PLAIN, 36);
         TextLayout layout = graphics().layoutText(text, new TextFormat().withFont(font));
         CanvasImage image = graphics().createImage(
                 (int) Math.ceil(layout.width()),
                 (int) Math.ceil(layout.height())
         );
+        image.canvas().setStrokeWidth(2);
+        image.canvas().setStrokeColor(0xFF0000eb);
         image.canvas().setFillColor(color);
         image.canvas().fillText(layout, 0, 0);
 
