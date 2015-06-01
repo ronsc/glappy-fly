@@ -33,9 +33,10 @@ public class Golang {
                 sprite.setSprite(spriteIndex);
                 sprite.layer().setOrigin(sprite.width() / 2f, sprite.height() / 2f);
                 sprite.layer().setTranslation(x, y);
-                hasLoaded = true;
+
 
                 golangBody = initPhysicsBox(world, x, y, sprite.width()/2f, sprite.height()/2f);
+                hasLoaded = true;
 
                 PlayN.keyboard().setListener(new Keyboard.Adapter() {
                     @Override
@@ -77,6 +78,7 @@ public class Golang {
                 golangBody.getPosition().x / LoadWorld.M_PER_PIXEL,
                 golangBody.getPosition().y / LoadWorld.M_PER_PIXEL
         );
+
         golangBody.setTransform(new Vec2(
                 100 * LoadWorld.M_PER_PIXEL,
                 golangBody.getPosition().y
@@ -111,5 +113,9 @@ public class Golang {
         ), 0f);
 
         return box;
+    }
+
+    public Body body() {
+        return golangBody;
     }
 }
