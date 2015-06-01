@@ -73,10 +73,14 @@ public class Golang {
 
     public void paint(Clock clock){
         if(!hasLoaded) return;
-//        sprite.layer().setTranslation(
-//                golangBody.getPosition().x / LoadWorld.M_PER_PIXEL,
-//                golangBody.getPosition().y / LoadWorld.M_PER_PIXEL
-//        );
+        sprite.layer().setTranslation(
+                golangBody.getPosition().x / LoadWorld.M_PER_PIXEL,
+                golangBody.getPosition().y / LoadWorld.M_PER_PIXEL
+        );
+        golangBody.setTransform(new Vec2(
+                100 * LoadWorld.M_PER_PIXEL,
+                golangBody.getPosition().y
+        ), 0);
     }
 
     public void setHasStart(boolean hasStart) {
@@ -99,7 +103,6 @@ public class Golang {
         fixtureDef.shape = boxShape;
         fixtureDef.density = 0.2f;
         fixtureDef.friction = 0.2f;
-        fixtureDef.restitution = 0.5f;
         box.createFixture(fixtureDef);
 
         box.setTransform(new Vec2(
