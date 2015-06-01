@@ -6,5 +6,6 @@ import playn.core.Image;
 
 public class LoadImage {
     public Image bgStartScreen = assets().getImage("images/bg_startgame.png");
-    public Image bgStripe = assets().getImage("images/bg_stripe.png");
+    public Image bgGamePlay = assets().getImage("images/bg_gameplay.png");
+    public Image bgStripe = assets().getImage("images/bg_stripe2.png");
 }

@@ -20,7 +20,7 @@ public class StartScreen extends Screen {
     private static LoadImage loadImage;
 
     private World world;
-    private boolean showDebugDraw = true;
+    private boolean showDebugDraw = false;
     private DebugDrawBox2D debugDraw;
 
     private LoadWorld loadWorld;
@@ -36,47 +36,49 @@ public class StartScreen extends Screen {
     @Override
     public void wasShown() {
         super.wasShown();
-        System.out.println("SCREEN : StartScreen");
 
         // setup world and ground
         loadWorld = new LoadWorld();
         world = loadWorld.getWorld();
+
         // background image
         ImageLayer imgLayer = graphics().createImageLayer(loadImage.bgStartScreen);
         this.layer.add(imgLayer);
+
         // ground image
         bgStripeLayer1 = graphics().createImageLayer(loadImage.bgStripe);
         bgStripeLayer2 = graphics().createImageLayer(loadImage.bgStripe);
-        bgStripeLayer1.setTranslation(0, this.height() - 65);
-        bgStripeLayer2.setTranslation(640, this.height() - 65);
+        bgStripeLayer1.setTranslation(0, this.height() - 58);
+        bgStripeLayer2.setTranslation(640, this.height() - 58);
         this.layer.add(bgStripeLayer1);
         this.layer.add(bgStripeLayer2);
 
+        // init character golang
         g = new Golang(world, 150, 200);
+        g.setHasStart(false);
         this.layer.add(g.layer());
 
+        // text to start
         Layer text = createTextLayer("Click to StartGame", 0xff000000);
-        text.setTranslation(width()/2f-120,height()/2f-30);
+        text.setTranslation(width() / 2f - 120, height() / 2f - 30);
         this.layer.add(text);
 
-        PlayN.pointer().setListener(new Pointer.Adapter(){
+        // auto go to gameplay
+        //ss.push(new GamePlay(ss, loadImage));
+
+        // call show debug draw
+        showdebugdraw();
+    }
+
+    @Override
+    public void wasAdded() {
+        // event onclick to start game
+        PlayN.pointer().setListener(new Pointer.Adapter() {
             @Override
             public void onPointerEnd(Pointer.Event event) {
                 ss.push(new GamePlay(ss, loadImage));
             }
         });
-
-//        PlayN.keyboard().setListener(new Keyboard.Adapter(){
-//            @Override
-//            public void onKeyUp(Keyboard.Event event) {
-//                if(event.key().equals(Key.ENTER)){
-//                    ss.push(new GamePlay(ss, loadImage));
-//                }
-//            }
-//        });
-
-        // call show debug draw
-        showdebugdraw();
     }
 
     @Override
