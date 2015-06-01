@@ -29,11 +29,9 @@
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2211#2394#0" expanded="true" />
-                <element signature="e#2393#2394#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,13 +40,29 @@
       <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6143437">
-              <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.3756178">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+              <folding>
+                <element signature="e#1329#1351#0" expanded="true" />
+                <element signature="method#endContact#0;class#2475:3375" expanded="false" />
+                <element signature="method#preSolve#0;class#2475:3375" expanded="false" />
+                <element signature="method#postSolve#0;class#2475:3375" expanded="false" />
+                <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
+                <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pipe.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Pipe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#endContact#0;class#2730:3507" expanded="false" />
-                <element signature="method#preSolve#0;class#2730:3507" expanded="false" />
-                <element signature="method#postSolve#0;class#2730:3507" expanded="false" />
+                <element signature="method#initPhysicsBox#0;class#Pipe#0" expanded="false" />
+                <element signature="method#initPhysicsBoxSensor#0;class#Pipe#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -58,12 +72,10 @@
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="85" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#onFailure#0;class#842:1834" expanded="false" />
-                <element signature="e#2691#2692#0" expanded="true" />
-                <element signature="e#2731#2732#0" expanded="true" />
+                <element signature="method#onFailure#0;class#842:1835" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,11 +97,10 @@
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#227#228#0" expanded="true" />
-                <element signature="e#261#262#0" expanded="true" />
+                <element signature="method#initPhysicsBoxSensor#0;class#LoadMap#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,12 +142,14 @@
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/sprites/SpriteLoader.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/Glappy.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/loadWorld.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap1.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadWorld.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java" />
+        <option value="$PROJECT_DIR$/assets/src/main/resources/assets/json/pipe.json" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Pipe.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java" />
       </list>
     </option>
@@ -152,10 +165,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1358" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -180,8 +193,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -241,6 +254,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glappy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glappy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sprites" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,6 +460,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -651,19 +702,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22361112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23572475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -715,7 +766,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -723,11 +774,88 @@
     <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
+          <folding>
+            <element signature="e#1329#1351#0" expanded="true" />
+            <element signature="method#endContact#0;class#2475:3375" expanded="false" />
+            <element signature="method#preSolve#0;class#2475:3375" expanded="false" />
+            <element signature="method#postSolve#0;class#2475:3375" expanded="false" />
+            <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Pipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2211#2394#0" expanded="true" />
-            <element signature="e#2393#2394#0" expanded="true" />
+            <element signature="method#initPhysicsBox#0;class#Pipe#0" expanded="false" />
+            <element signature="method#initPhysicsBoxSensor#0;class#Pipe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="112" column="15" selection-start-line="112" selection-start-column="15" selection-end-line="112" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onFailure#0;class#842:1835" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initPhysicsBoxSensor#0;class#LoadMap#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -737,10 +865,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#endContact#0;class#2730:3507" expanded="false" />
-            <element signature="method#preSolve#0;class#2730:3507" expanded="false" />
-            <element signature="method#postSolve#0;class#2730:3507" expanded="false" />
+            <element signature="e#1329#1351#0" expanded="true" />
+            <element signature="method#endContact#0;class#2475:3375" expanded="false" />
+            <element signature="method#preSolve#0;class#2475:3375" expanded="false" />
+            <element signature="method#postSolve#0;class#2475:3375" expanded="false" />
+            <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -751,9 +881,7 @@
           <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onFailure#0;class#842:1834" expanded="false" />
-            <element signature="e#2691#2692#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
+            <element signature="method#onFailure#0;class#842:1835" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -790,32 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.23139377">
           <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/sprites/SpriteLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025710419">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/sprites/SpriteImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.102841675">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/sprites/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.102841675">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,16 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,44 +941,18 @@
         <state vertical-scroll-proportion="0.33423546">
           <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
-            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.14497529">
+          <caret line="771" column="25" selection-start-line="771" selection-start-column="25" selection-end-line="771" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#261#262#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2211#2394#0" expanded="true" />
-            <element signature="e#2393#2394#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onFailure#0;class#842:1834" expanded="false" />
-            <element signature="e#2691#2692#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
+            <element signature="e#32010#32011#0" expanded="false" />
+            <element signature="e#32095#32096#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -901,15 +967,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6143437">
-          <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#endContact#0;class#2730:3507" expanded="false" />
-            <element signature="method#preSolve#0;class#2730:3507" expanded="false" />
-            <element signature="method#postSolve#0;class#2730:3507" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/src/main/resources/assets/json/golang.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="85" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onFailure#0;class#842:1835" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/sprites/SpriteLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.036536">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/sprites/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9810555">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/sprites/SpriteImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20568335">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/src/main/resources/assets/json/pipe.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29395217">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initPhysicsBoxSensor#0;class#LoadMap#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Pipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initPhysicsBox#0;class#Pipe#0" expanded="false" />
+            <element signature="method#initPhysicsBoxSensor#0;class#Pipe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3756178">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#1329#1351#0" expanded="true" />
+            <element signature="method#endContact#0;class#2475:3375" expanded="false" />
+            <element signature="method#preSolve#0;class#2475:3375" expanded="false" />
+            <element signature="method#postSolve#0;class#2475:3375" expanded="false" />
+            <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
           </folding>
         </state>
       </provider>

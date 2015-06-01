@@ -14,9 +14,15 @@ import sut.cpe.edp.core.assets.LoadImage;
 import sut.cpe.edp.core.assets.LoadMap;
 import sut.cpe.edp.core.assets.LoadWorld;
 import sut.cpe.edp.core.characters.Golang;
+import sut.cpe.edp.core.characters.Pipe;
 import tripleplay.game.Screen;
 import tripleplay.game.ScreenStack;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
+import static playn.core.PlayN.assets;
 import static playn.core.PlayN.graphics;
 
 public class GamePlay extends Screen {
@@ -25,11 +31,12 @@ public class GamePlay extends Screen {
     private static LoadImage loadImage;
 
     private World world;
-    private boolean showDebugDraw = true;
+    private boolean showDebugDraw = false;
     private DebugDrawBox2D debugDraw;
 
     private LoadWorld loadWorld;
     private Golang g;
+    private Pipe p;
 
     private Layer bgStripeLayer1, bgStripeLayer2;
     private Layer scoreLayer;
@@ -37,6 +44,7 @@ public class GamePlay extends Screen {
 
     LoadMap map;
     Body b[] = new Body[3];
+    HashMap<Body[], ImageLayer[]> pipeMap = new HashMap<Body[], ImageLayer[]>();
 
     public GamePlay(ScreenStack ss, LoadImage loadImage) {
         this.ss = ss;
@@ -63,38 +71,26 @@ public class GamePlay extends Screen {
         this.layer.add(bgStripeLayer1);
         this.layer.add(bgStripeLayer2);
 
-        // init score
-        scoreLayer = createTextLayer(score, 0xffFFFFFF);
-        this.layer.add(scoreLayer);
-
         // init character golang
         g = new Golang(world, 100, 200);
         g.setHasStart(true);
         this.layer.add(g.layer());
 
-        CanvasImage a = graphics().createImage(20, 75);
-        a.canvas().setFillColor(0xff000000);
-        a.canvas().drawLine(5, 5, 5, 5);
-        Layer pipe = graphics().createImageLayer(a);
-        pipe.setTranslation(200, 200);
-        this.layer.add(pipe);
-
-        // load map
-        map = new LoadMap(world);
-        b[0] = map.initPhysicsBox(this.width(), 75, 20, 75);
-        b[1] = map.initPhysicsBoxSensor(this.width(), 210, 20, 60);
-        b[2] = map.initPhysicsBox(this.width(), 345, 20, 75);
+        // init score
+        scoreLayer = createTextLayer(score, 0xffFFFFFF);
+        this.layer.add(scoreLayer);
 
         world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
-                if(contact.getFixtureA().getBody() == b[1]) {
-                    System.out.println("sensor");
-                    updateScore();
-                }
+                if(contact.getFixtureA().getBody() == g.body() || contact.getFixtureB().getBody() == g.body()) {
+                    System.out.println("conn");
 
-                if(contact.getFixtureA().getBody() == b[0] || contact.getFixtureB().getBody() == b[0]) {
-                    System.out.println("dead");
+                    for(Body[] pipeBody : pipeMap.keySet()) {
+                        if(contact.getFixtureA().getBody() == pipeBody[1] || contact.getFixtureB().getBody() == pipeBody[1]) {
+                            updateScore();
+                        }
+                    }
                 }
             }
 
@@ -135,8 +131,19 @@ public class GamePlay extends Screen {
         g.update(delta);
 
         t += delta;
-        if(t>1000) {
-            //updateScore();
+        if(t>5000) {
+            Random ran = new Random();
+            int index = ran.nextInt(3);
+            System.out.println("random : " + index);
+
+            Pipe p = new Pipe(world, loadImage);
+            Body[] body = p.getBody(index);
+            ImageLayer[] imgLayer = p.getImageLayer(index);
+            pipeMap.put(body, imgLayer);
+
+            this.layer.add(imgLayer[0]);
+            this.layer.add(imgLayer[1]);
+
             t = 0;
         }
 
@@ -154,6 +161,7 @@ public class GamePlay extends Screen {
     @Override
     public void paint(Clock clock) {
         super.paint(clock);
+
         g.paint(clock);
 
         if(showDebugDraw) {
@@ -161,21 +169,23 @@ public class GamePlay extends Screen {
             world.drawDebugData();
         }
 
-        if(b[0].getPosition().x < -1) {
-            world.destroyBody(b[0]);
-            world.destroyBody(b[1]);
-            world.destroyBody(b[2]);
+        for(Map.Entry<Body[], ImageLayer[]> pipe : pipeMap.entrySet()){
+            for(Body body : pipe.getKey()) {
+                body.setTransform(new Vec2(
+                        body.getPosition().x - 0.025f,
+                        body.getPosition().y
+                ),0);
+            }
 
-            b[0] = map.initPhysicsBox(this.width(), 75, 20, 75);
-            b[1] = map.initPhysicsBoxSensor(this.width(), 210, 20, 60);
-            b[2] = map.initPhysicsBox(this.width(), 345, 20, 75);
-        }
+            pipe.getValue()[0].setTranslation(
+                    pipe.getKey()[0].getPosition().x / LoadWorld.M_PER_PIXEL - 20,
+                    pipe.getKey()[0].getPosition().y / LoadWorld.M_PER_PIXEL - pipe.getValue()[0].height()/2f
+            );
 
-        for(Body body : b) {
-            body.setTransform(new Vec2(
-                    body.getPosition().x - 0.025f,
-                    body.getPosition().y
-            ),0);
+            pipe.getValue()[1].setTranslation(
+                    pipe.getKey()[2].getPosition().x / LoadWorld.M_PER_PIXEL - 20,
+                    pipe.getKey()[2].getPosition().y / LoadWorld.M_PER_PIXEL - pipe.getValue()[1].height()/2f
+            );
         }
     }
 
