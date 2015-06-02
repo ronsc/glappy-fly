@@ -8,6 +8,7 @@ import org.jbox2d.dynamics.Body;
 import org.jbox2d.dynamics.World;
 import playn.core.*;
 import playn.core.util.Clock;
+import sut.cpe.edp.core.assets.GameContext;
 import sut.cpe.edp.core.assets.LoadImage;
 import sut.cpe.edp.core.assets.LoadWorld;
 import sut.cpe.edp.core.characters.Golang;
@@ -17,10 +18,11 @@ import tripleplay.game.ScreenStack;
 public class StartScreen extends Screen {
 
     private ScreenStack ss;
+    private GameContext gameContext;
     private static LoadImage loadImage;
 
     private World world;
-    private boolean showDebugDraw = false;
+    private boolean showDebugDraw = true;
     private DebugDrawBox2D debugDraw;
 
     private LoadWorld loadWorld;
@@ -28,9 +30,10 @@ public class StartScreen extends Screen {
 
     private Layer bgStripeLayer1, bgStripeLayer2;
 
-    public StartScreen(ScreenStack ss, LoadImage loadImage) {
+    public StartScreen(ScreenStack ss, GameContext gameContext) {
         this.ss = ss;
-        this.loadImage = loadImage;
+        this.gameContext = gameContext;
+        this.loadImage = gameContext.getLoadImage();
     }
 
     @Override
@@ -38,7 +41,7 @@ public class StartScreen extends Screen {
         super.wasShown();
 
         // setup world and ground
-        loadWorld = new LoadWorld();
+        loadWorld = gameContext.getLoadWorld();
         world = loadWorld.getWorld();
 
         // background image
@@ -63,9 +66,6 @@ public class StartScreen extends Screen {
         text.setTranslation(width() / 2f - 120, height() / 2f - 30);
         this.layer.add(text);
 
-        // auto go to gameplay
-        //ss.push(new GamePlay(ss, loadImage));
-
         // call show debug draw
         showdebugdraw();
     }
@@ -76,7 +76,8 @@ public class StartScreen extends Screen {
         PlayN.pointer().setListener(new Pointer.Adapter() {
             @Override
             public void onPointerEnd(Pointer.Event event) {
-                ss.push(new GamePlay(ss, loadImage));
+                ss.remove(ss.top());
+                ss.push(new GamePlay(ss, gameContext));
             }
         });
     }
