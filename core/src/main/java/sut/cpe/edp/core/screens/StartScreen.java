@@ -22,7 +22,7 @@ public class StartScreen extends Screen {
     private static LoadImage loadImage;
 
     private World world;
-    private boolean showDebugDraw = true;
+    private boolean showDebugDraw = false;
     private DebugDrawBox2D debugDraw;
 
     private LoadWorld loadWorld;
@@ -30,10 +30,10 @@ public class StartScreen extends Screen {
 
     private Layer bgStripeLayer1, bgStripeLayer2;
 
-    public StartScreen(ScreenStack ss, GameContext gameContext) {
+    public StartScreen(ScreenStack ss, GameContext gameContext, LoadImage loadImage) {
         this.ss = ss;
         this.gameContext = gameContext;
-        this.loadImage = gameContext.getLoadImage();
+        this.loadImage = loadImage;
     }
 
     @Override
@@ -61,25 +61,23 @@ public class StartScreen extends Screen {
         g.setHasStart(false);
         this.layer.add(g.layer());
 
-        // text to start
-        Layer text = createTextLayer("Click to StartGame", 0xff000000);
-        text.setTranslation(width() / 2f - 120, height() / 2f - 30);
-        this.layer.add(text);
+        ImageLayer btnStartGame = graphics().createImageLayer(loadImage.btnStartGame);
+        this.layer.add(btnStartGame.setTranslation(width() / 2f - 50, height() / 2f - 80));
+
+        ImageLayer btnHighSocre = graphics().createImageLayer(loadImage.btnHighScore);
+        this.layer.add(btnHighSocre.setTranslation(width() / 2f - 50, height() / 2f));
+
+        btnStartGame.addListener(new Pointer.Adapter(){
+            @Override
+            public void onPointerEnd(Pointer.Event event) {
+                gameContext.getLoadWorld().getWorld().destroyBody(g.body());
+                ss.remove(ss.top());
+                ss.push(new GamePlay(ss, gameContext, loadImage));
+            }
+        });
 
         // call show debug draw
         showdebugdraw();
-    }
-
-    @Override
-    public void wasAdded() {
-        // event onclick to start game
-        PlayN.pointer().setListener(new Pointer.Adapter() {
-            @Override
-            public void onPointerEnd(Pointer.Event event) {
-                ss.remove(ss.top());
-                ss.push(new GamePlay(ss, gameContext));
-            }
-        });
     }
 
     @Override
@@ -108,19 +106,6 @@ public class StartScreen extends Screen {
             debugDraw.getCanvas().clear();
             world.drawDebugData();
         }
-    }
-
-    static Layer createTextLayer(String text, Integer color) {
-        Font font = graphics().createFont("Helvetica", Font.Style.PLAIN, 24);
-        TextLayout layout = graphics().layoutText(text, new TextFormat().withFont(font));
-        CanvasImage image = graphics().createImage(
-                (int) Math.ceil(layout.width()),
-                (int) Math.ceil(layout.height())
-        );
-        image.canvas().setFillColor(color);
-        image.canvas().fillText(layout, 0, 0);
-
-        return graphics().createImageLayer(image);
     }
 
     public void showdebugdraw() {

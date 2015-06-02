@@ -21,7 +21,7 @@ public class Glappy extends Game.Default {
 
     @Override
     public void init() {
-        ss.push(new StartScreen(ss, new GameContext()));
+        ss.push(new StartScreen(ss, new GameContext(), new LoadImage()));
     }
 
     @Override

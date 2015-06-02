@@ -25,30 +25,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StartScreen.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StartScreen.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.61705005">
+              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2297#2606#0" expanded="true" />
+                <element signature="e#2605#2606#0" expanded="true" />
+                <element signature="method#update#0;class#StartScreen#0" expanded="false" />
+                <element signature="method#paint#0;class#StartScreen#0" expanded="false" />
+                <element signature="method#showdebugdraw#0;class#StartScreen#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48579162">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="33" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#endContact#0;class#2463:3969" expanded="false" />
-                <element signature="method#preSolve#0;class#2463:3969" expanded="false" />
-                <element signature="method#postSolve#0;class#2463:3969" expanded="false" />
+                <element signature="method#updateScore#0;class#GamePlay#0" expanded="false" />
+                <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
                 <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoadImage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,9 +70,11 @@
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GameOver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1462#1739#0" expanded="true" />
+                <element signature="e#1738#1739#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,16 +84,12 @@
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/GameContext.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
-                <element signature="e#402#403#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-                <element signature="e#498#499#0" expanded="true" />
-                <element signature="e#537#538#0" expanded="true" />
-                <element signature="e#569#570#0" expanded="true" />
-                <element signature="e#608#609#0" expanded="true" />
-                <element signature="e#640#641#0" expanded="true" />
+                <element signature="e#240#241#0" expanded="true" />
+                <element signature="e#288#289#0" expanded="true" />
+                <element signature="e#462#463#0" expanded="true" />
+                <element signature="e#494#495#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,16 +99,10 @@
         <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+              <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#onFailure#0;class#842:1834" expanded="false" />
-                <element signature="e#2692#2693#0" expanded="true" />
-                <element signature="e#2732#2733#0" expanded="true" />
-                <element signature="e#2760#2761#0" expanded="true" />
-                <element signature="e#2797#2798#0" expanded="true" />
-                <element signature="e#2823#2824#0" expanded="true" />
-                <element signature="e#2856#2857#0" expanded="true" />
+                <element signature="method#initPhysicsBox#0;class#Golang#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,18 +132,19 @@
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/sprites/SpriteLoader.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/loadWorld.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap1.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadWorld.java" />
         <option value="$PROJECT_DIR$/assets/src/main/resources/assets/json/pipe.json" />
-        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Pipe.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/Context.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadMap.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/GameContext.java" />
+        <option value="$PROJECT_DIR$/assets/src/main/resources/assets/textfile/test.txt" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadWorld.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/Glappy.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GameOver.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/GameContext.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GameOver.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java" />
       </list>
     </option>
   </component>
@@ -182,7 +188,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -417,7 +422,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="json" />
+              <option name="myItemId" value="textfile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,14 +455,11 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -728,9 +730,91 @@
     <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2297#2606#0" expanded="true" />
+            <element signature="e#2605#2606#0" expanded="true" />
+            <element signature="method#update#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#paint#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#StartScreen#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+          <folding>
+            <element signature="method#updateScore#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GameOver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1462#1739#0" expanded="true" />
+            <element signature="e#1738#1739#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/GameContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="52" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onFailure#0;class#842:1972" expanded="false" />
+            <element signature="method#initPhysicsBox#0;class#Golang#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2297#2606#0" expanded="true" />
+            <element signature="e#2605#2606#0" expanded="true" />
+            <element signature="method#update#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#paint#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#StartScreen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -740,10 +824,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#endContact#0;class#2463:3969" expanded="false" />
-            <element signature="method#preSolve#0;class#2463:3969" expanded="false" />
-            <element signature="method#postSolve#0;class#2463:3969" expanded="false" />
+            <element signature="method#updateScore#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
             <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
           </folding>
         </state>
@@ -754,7 +836,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initPhysicsBox#0;class#Pipe#0" expanded="false" />
             <element signature="method#initPhysicsBoxSensor#0;class#Pipe#0" expanded="false" />
           </folding>
@@ -767,13 +848,8 @@
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="85" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onFailure#0;class#842:1834" expanded="false" />
-            <element signature="e#2692#2693#0" expanded="true" />
-            <element signature="e#2732#2733#0" expanded="true" />
-            <element signature="e#2760#2761#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#2823#2824#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="method#onFailure#0;class#842:1972" expanded="false" />
+            <element signature="method#initPhysicsBox#0;class#Golang#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -783,7 +859,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,9 +871,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -804,6 +881,11 @@
           <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2297#2606#0" expanded="true" />
+            <element signature="e#2605#2606#0" expanded="true" />
+            <element signature="method#update#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#paint#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#StartScreen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -813,10 +895,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#endContact#0;class#2463:3969" expanded="false" />
-            <element signature="method#preSolve#0;class#2463:3969" expanded="false" />
-            <element signature="method#postSolve#0;class#2463:3969" expanded="false" />
+            <element signature="method#updateScore#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
             <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
           </folding>
         </state>
@@ -827,7 +907,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initPhysicsBox#0;class#Pipe#0" expanded="false" />
             <element signature="method#initPhysicsBoxSensor#0;class#Pipe#0" expanded="false" />
           </folding>
@@ -840,13 +919,8 @@
           <caret line="112" column="15" selection-start-line="112" selection-start-column="15" selection-end-line="112" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onFailure#0;class#842:1834" expanded="false" />
-            <element signature="e#2692#2693#0" expanded="true" />
-            <element signature="e#2732#2733#0" expanded="true" />
-            <element signature="e#2760#2761#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#2823#2824#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="method#onFailure#0;class#842:1972" expanded="false" />
+            <element signature="method#initPhysicsBox#0;class#Golang#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -856,7 +930,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,9 +942,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -877,6 +952,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2297#2606#0" expanded="true" />
+            <element signature="e#2605#2606#0" expanded="true" />
+            <element signature="method#update#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#paint#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#StartScreen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -886,10 +966,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#endContact#0;class#2463:3969" expanded="false" />
-            <element signature="method#preSolve#0;class#2463:3969" expanded="false" />
-            <element signature="method#postSolve#0;class#2463:3969" expanded="false" />
+            <element signature="method#updateScore#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
             <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
           </folding>
         </state>
@@ -901,13 +979,8 @@
           <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onFailure#0;class#842:1834" expanded="false" />
-            <element signature="e#2692#2693#0" expanded="true" />
-            <element signature="e#2732#2733#0" expanded="true" />
-            <element signature="e#2760#2761#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#2823#2824#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="method#onFailure#0;class#842:1972" expanded="false" />
+            <element signature="method#initPhysicsBox#0;class#Golang#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,7 +990,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -926,9 +1002,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,82 +1083,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/Glappy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30852503">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4600812">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30852503">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Pipe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0284168">
           <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initPhysicsBox#0;class#Pipe#0" expanded="false" />
             <element signature="method#initPhysicsBoxSensor#0;class#Pipe#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/GameContext.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/playn/playn-core/1.9/playn-core-1.9-sources.jar!/playn/core/Sound.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state vertical-scroll-proportion="-1.8024358">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/playn/playn-core/1.9/playn-core-1.9-sources.jar!/playn/core/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2571042">
+          <caret line="84" column="3" selection-start-line="84" selection-start-column="3" selection-end-line="84" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/playn/playn-core/1.9/playn-core-1.9-sources.jar!/playn/core/PlayN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4600812">
+          <caret line="170" column="19" selection-start-line="170" selection-start-column="19" selection-end-line="170" selection-end-column="19" />
           <folding>
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#608#609#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
+            <element signature="e#5725#5726#0" expanded="false" />
+            <element signature="e#5759#5760#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/playn/playn-core/1.9/playn-core-1.9-sources.jar!/playn/core/util/TextBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3328823">
+          <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadImage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+          <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/Glappy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46278754">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GameOver.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jbox2d/jbox2d-library/2.2.1.1/jbox2d-library-2.2.1.1-sources.jar!/org/jbox2d/dynamics/World.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        <state vertical-scroll-proportion="-6.9675236">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/LoadWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48579162">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1092,30 +1172,62 @@
     <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/characters/Golang.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onFailure#0;class#842:1834" expanded="false" />
-            <element signature="e#2692#2693#0" expanded="true" />
-            <element signature="e#2732#2733#0" expanded="true" />
-            <element signature="e#2760#2761#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#2823#2824#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="method#initPhysicsBox#0;class#Golang#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/assets/GameContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GamePlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48579162">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="method#updateScore#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#createTextLayer#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/GameOver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#endContact#0;class#2463:3969" expanded="false" />
-            <element signature="method#preSolve#0;class#2463:3969" expanded="false" />
-            <element signature="method#postSolve#0;class#2463:3969" expanded="false" />
-            <element signature="method#showdebugdraw#0;class#GamePlay#0" expanded="false" />
+            <element signature="e#1462#1739#0" expanded="true" />
+            <element signature="e#1738#1739#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/sut/cpe/edp/core/screens/StartScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61705005">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2297#2606#0" expanded="true" />
+            <element signature="e#2605#2606#0" expanded="true" />
+            <element signature="method#update#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#paint#0;class#StartScreen#0" expanded="false" />
+            <element signature="method#showdebugdraw#0;class#StartScreen#0" expanded="false" />
           </folding>
         </state>
       </provider>

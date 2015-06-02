@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import static playn.core.PlayN.graphics;
+import static playn.core.PlayN.*;
 
 public class GamePlay extends Screen {
 
@@ -30,7 +30,7 @@ public class GamePlay extends Screen {
     private static LoadImage loadImage;
 
     private World world;
-    private boolean showDebugDraw = true;
+    private boolean showDebugDraw = false;
     private DebugDrawBox2D debugDraw;
 
     private LoadWorld loadWorld;
@@ -42,28 +42,28 @@ public class GamePlay extends Screen {
     private int t=0, score=0;
 
     Body b[] = new Body[3];
-    HashMap<Body[], ImageLayer[]> pipeMap = new HashMap<Body[], ImageLayer[]>();
+    HashMap<Body[], ImageLayer[]> pipeMap;
 
     private GameContext gameContext;
 
-    public GamePlay(ScreenStack ss, GameContext gameContext) {
+    public GamePlay(ScreenStack ss, GameContext gameContext, LoadImage loadImage) {
         this.ss = ss;
         this.gameContext = gameContext;
-
-        this.loadImage = gameContext.getLoadImage();
+        this.loadImage = loadImage;
     }
 
     @Override
     public void wasShown() {
         super.wasShown();
 
+        pipeMap = new HashMap<Body[], ImageLayer[]>();
+
         // setup world and ground
         loadWorld = gameContext.getLoadWorld();
         world = loadWorld.getWorld();
 
         // background image
-        ImageLayer imgLayer = graphics().createImageLayer(loadImage.bgGamePlay);
-        this.layer.add(imgLayer);
+        this.layer.add(graphics().createImageLayer(loadImage.bgGamePlay));
 
         // ground image
         bgStripeLayer1 = graphics().createImageLayer(loadImage.bgStripe);
@@ -84,24 +84,28 @@ public class GamePlay extends Screen {
         world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
-                if(contact.getFixtureA().getBody() == g.body() || contact.getFixtureB().getBody() == g.body()) {
-                    System.out.println("conn");
-
-                    for(Body[] pipeBody : pipeMap.keySet()) {
-                        if(contact.getFixtureA().getBody() == pipeBody[1] || contact.getFixtureB().getBody() == pipeBody[1]) {
+                if(contact.getFixtureA().getBody() == loadWorld.getGround() || contact.getFixtureB().getBody() == loadWorld.getGround()){
+                    System.out.println("GameOver");
+                    pipeMap = null;
+                    world = null;
+                    ss.remove(ss.top());
+                    ss.push(new GameOver(ss, gameContext, loadImage));
+                } else if (contact.getFixtureA().getBody() == g.body() || contact.getFixtureB().getBody() == g.body()) {
+                    for (Body[] pipeBody : pipeMap.keySet()) {
+                        if (contact.getFixtureA().getBody() == pipeBody[1] || contact.getFixtureB().getBody() == pipeBody[1]) {
                             gameContext.setScore(gameContext.getScore() + 1);
                             updateScore();
                         }
 
-                        if(contact.getFixtureA().getBody() == pipeBody[0]
+                        if (contact.getFixtureA().getBody() == pipeBody[0]
                                 || contact.getFixtureB().getBody() == pipeBody[0]
                                 || contact.getFixtureA().getBody() == pipeBody[2]
-                                || contact.getFixtureB().getBody() == pipeBody[2]){
-
+                                || contact.getFixtureB().getBody() == pipeBody[2]) {
                             System.out.println("GameOver");
-
+                            pipeMap = null;
+                            world = null;
                             ss.remove(ss.top());
-                            ss.push(new GameOver(ss, gameContext));
+                            ss.push(new GameOver(ss, gameContext, loadImage));
                         }
                     }
                 }
@@ -125,14 +129,6 @@ public class GamePlay extends Screen {
 
         // call show debug draw
         showdebugdraw();
-    }
-
-    @Override
-    public void wasAdded() {
-        PlayN.pointer().setListener(new Pointer.Adapter() {
-            @Override
-            public void onPointerEnd(Pointer.Event event) { }
-        });
     }
 
     @Override
