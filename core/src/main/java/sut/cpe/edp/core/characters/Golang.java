@@ -34,7 +34,6 @@ public class Golang {
                 sprite.layer().setOrigin(sprite.width() / 2f, sprite.height() / 2f);
                 sprite.layer().setTranslation(x, y);
 
-
                 golangBody = initPhysicsBox(world, x, y, sprite.width()/2f, sprite.height()/2f);
                 hasLoaded = true;
 
@@ -67,7 +66,7 @@ public class Golang {
             e = 0;
         }
 
-        if(golangBody.getPosition().y > 9 && !hasStart) {
+        if(!hasStart && golangBody.getPosition().y > 9) {
             golangBody.applyForce(new Vec2(0, -40), golangBody.getPosition());
         }
     }
@@ -93,6 +92,10 @@ public class Golang {
         return sprite.layer();
     }
 
+    public Body body() {
+        return golangBody;
+    }
+
     public Body initPhysicsBox(World world, float x, float y, float w, float h) {
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyType.DYNAMIC;
@@ -113,9 +116,5 @@ public class Golang {
         ), 0f);
 
         return box;
-    }
-
-    public Body body() {
-        return golangBody;
     }
 }

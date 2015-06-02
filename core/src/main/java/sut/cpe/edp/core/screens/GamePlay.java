@@ -10,8 +10,8 @@ import org.jbox2d.dynamics.World;
 import org.jbox2d.dynamics.contacts.Contact;
 import playn.core.*;
 import playn.core.util.Clock;
+import sut.cpe.edp.core.assets.GameContext;
 import sut.cpe.edp.core.assets.LoadImage;
-import sut.cpe.edp.core.assets.LoadMap;
 import sut.cpe.edp.core.assets.LoadWorld;
 import sut.cpe.edp.core.characters.Golang;
 import sut.cpe.edp.core.characters.Pipe;
@@ -22,7 +22,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import static playn.core.PlayN.assets;
 import static playn.core.PlayN.graphics;
 
 public class GamePlay extends Screen {
@@ -31,7 +30,7 @@ public class GamePlay extends Screen {
     private static LoadImage loadImage;
 
     private World world;
-    private boolean showDebugDraw = false;
+    private boolean showDebugDraw = true;
     private DebugDrawBox2D debugDraw;
 
     private LoadWorld loadWorld;
@@ -42,13 +41,16 @@ public class GamePlay extends Screen {
     private Layer scoreLayer;
     private int t=0, score=0;
 
-    LoadMap map;
     Body b[] = new Body[3];
     HashMap<Body[], ImageLayer[]> pipeMap = new HashMap<Body[], ImageLayer[]>();
 
-    public GamePlay(ScreenStack ss, LoadImage loadImage) {
+    private GameContext gameContext;
+
+    public GamePlay(ScreenStack ss, GameContext gameContext) {
         this.ss = ss;
-        this.loadImage = loadImage;
+        this.gameContext = gameContext;
+
+        this.loadImage = gameContext.getLoadImage();
     }
 
     @Override
@@ -56,7 +58,7 @@ public class GamePlay extends Screen {
         super.wasShown();
 
         // setup world and ground
-        loadWorld = new LoadWorld();
+        loadWorld = gameContext.getLoadWorld();
         world = loadWorld.getWorld();
 
         // background image
@@ -77,8 +79,7 @@ public class GamePlay extends Screen {
         this.layer.add(g.layer());
 
         // init score
-        scoreLayer = createTextLayer(score, 0xffFFFFFF);
-        this.layer.add(scoreLayer);
+        updateScore();
 
         world.setContactListener(new ContactListener() {
             @Override
@@ -88,7 +89,19 @@ public class GamePlay extends Screen {
 
                     for(Body[] pipeBody : pipeMap.keySet()) {
                         if(contact.getFixtureA().getBody() == pipeBody[1] || contact.getFixtureB().getBody() == pipeBody[1]) {
+                            gameContext.setScore(gameContext.getScore() + 1);
                             updateScore();
+                        }
+
+                        if(contact.getFixtureA().getBody() == pipeBody[0]
+                                || contact.getFixtureB().getBody() == pipeBody[0]
+                                || contact.getFixtureA().getBody() == pipeBody[2]
+                                || contact.getFixtureB().getBody() == pipeBody[2]){
+
+                            System.out.println("GameOver");
+
+                            ss.remove(ss.top());
+                            ss.push(new GameOver(ss, gameContext));
                         }
                     }
                 }
@@ -118,8 +131,7 @@ public class GamePlay extends Screen {
     public void wasAdded() {
         PlayN.pointer().setListener(new Pointer.Adapter() {
             @Override
-            public void onPointerEnd(Pointer.Event event) {
-            }
+            public void onPointerEnd(Pointer.Event event) { }
         });
     }
 
@@ -131,7 +143,7 @@ public class GamePlay extends Screen {
         g.update(delta);
 
         t += delta;
-        if(t>5000) {
+        if(t > gameContext.PIPE_TIME) {
             Random ran = new Random();
             int index = ran.nextInt(3);
             System.out.println("random : " + index);
@@ -172,7 +184,7 @@ public class GamePlay extends Screen {
         for(Map.Entry<Body[], ImageLayer[]> pipe : pipeMap.entrySet()){
             for(Body body : pipe.getKey()) {
                 body.setTransform(new Vec2(
-                        body.getPosition().x - 0.025f,
+                        body.getPosition().x - gameContext.SPEED,
                         body.getPosition().y
                 ),0);
             }
@@ -190,10 +202,10 @@ public class GamePlay extends Screen {
     }
 
     public void updateScore(){
-        scoreLayer.destroy();
+        if(scoreLayer != null)
+            scoreLayer.destroy();
 
-        int newScore = ++score;
-        scoreLayer = createTextLayer(newScore, 0xffFFFFFF);
+        scoreLayer = createTextLayer(gameContext.getScore(), 0xffFFFFFF);
         this.layer.add(scoreLayer);
     }
 
