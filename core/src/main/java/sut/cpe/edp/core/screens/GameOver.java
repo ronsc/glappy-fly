@@ -2,46 +2,54 @@ package sut.cpe.edp.core.screens;
 
 import playn.core.*;
 import sut.cpe.edp.core.assets.GameContext;
+import sut.cpe.edp.core.assets.LoadImage;
 import tripleplay.game.Screen;
 import tripleplay.game.ScreenStack;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Date;
+
+import static playn.core.PlayN.currentTime;
 import static playn.core.PlayN.graphics;
 
 public class GameOver extends Screen {
 
     private ScreenStack ss;
     private GameContext gameContext;
+    private LoadImage loadImage;
 
-    public GameOver(ScreenStack ss, GameContext gameContext) {
+    public GameOver(ScreenStack ss, GameContext gameContext, LoadImage loadImage) {
         this.ss = ss;
         this.gameContext = gameContext;
+        this.loadImage = loadImage;
     }
 
     @Override
     public void wasShown() {
         super.wasShown();
 
+        WriteToTextFile();
+
+        this.layer.add(graphics().createImageLayer(loadImage.bgStartScreen));
+
         Layer textOver = createTextLayer("GameOver", 0xffFFFFFF);
         this.layer.add(textOver);
 
-        Layer textYourScore = createTextLayer("Your Score", 0xffFFFFFF);
+        Layer textYourScore = createTextLayer("Your Score   " + Integer.toString(gameContext.getScore()), 0xffFFFFFF);
         textYourScore.setTranslation(textYourScore.tx(), textOver.ty() + 70f);
         this.layer.add(textYourScore);
 
-        Layer textScore = createTextLayer(Integer.toString(gameContext.getScore()), 0xffFFFFFF);
-        textScore.setTranslation(textScore.tx(), textYourScore.ty() + 70f);
-        this.layer.add(textScore);
-    }
+        ImageLayer btnStartGame = graphics().createImageLayer(loadImage.btnStartGame);
+        this.layer.add(btnStartGame.setTranslation(width() / 2f - 50, textYourScore.ty() + 70f));
 
-    @Override
-    public void wasAdded() {
-        // event onclick to start game
-        PlayN.pointer().setListener(new Pointer.Adapter() {
+        btnStartGame.addListener(new Pointer.Adapter(){
             @Override
             public void onPointerEnd(Pointer.Event event) {
                 gameContext = null;
                 ss.remove(ss.top());
-                ss.push(new StartScreen(ss, new GameContext()));
+                ss.push(new StartScreen(ss, new GameContext(), loadImage));
             }
         });
     }
@@ -60,6 +68,32 @@ public class GameOver extends Screen {
         image.canvas().strokeText(layout, 0, 0);
         image.canvas().fillText(layout, 0, 0);
 
-        return graphics().createImageLayer(image).setTranslation(320 - layout.width()/2f, 100);
+        return graphics().createImageLayer(image).setTranslation(320 - layout.width()/2f, 130);
+    }
+
+    public void WriteToTextFile() {
+        BufferedWriter writer = null;
+        try {
+            //create a temporary file
+            String timeLog = "score.txt";
+            File logFile = new File(timeLog);
+
+            // This will output the full path where the file will be written to...
+            System.out.println(logFile.getCanonicalPath());
+
+            writer = new BufferedWriter(new FileWriter(logFile, true));
+            writer.write(new Date().toLocaleString());
+            writer.newLine();
+            writer.write(Integer.toString(gameContext.getScore()));
+            writer.newLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                // Close the writer regardless of what happens...
+                writer.close();
+            } catch (Exception e) {
+            }
+        }
     }
 }

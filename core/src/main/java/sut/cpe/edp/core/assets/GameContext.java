@@ -7,11 +7,9 @@ public class GameContext {
     private int score = 0;
 
     private LoadWorld loadWorld;
-    private LoadImage loadImage;
 
     public GameContext() {
         this.loadWorld = new LoadWorld();
-        this.loadImage = new LoadImage();
     }
 
     public void setScore(int score) {
@@ -20,10 +18,6 @@ public class GameContext {
 
     public int getScore() {
         return this.score;
-    }
-
-    public LoadImage getLoadImage() {
-        return loadImage;
     }
 
     public LoadWorld getLoadWorld() {

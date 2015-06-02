@@ -37,6 +37,10 @@ public class Golang {
                 golangBody = initPhysicsBox(world, x, y, sprite.width()/2f, sprite.height()/2f);
                 hasLoaded = true;
 
+                if(hasStart) {
+                    golangBody.applyForce(new Vec2(0, -150), golangBody.getPosition());
+                }
+
                 PlayN.keyboard().setListener(new Keyboard.Adapter() {
                     @Override
                     public void onKeyUp(Keyboard.Event event) {

@@ -16,6 +16,7 @@ public class LoadWorld {
     public static int height = 18;
 
     private World world;
+    private Body ground;
 
     public LoadWorld() {
         setUpWorld();
@@ -27,6 +28,10 @@ public class LoadWorld {
         return world;
     }
 
+    public Body getGround() {
+        return this.ground;
+    }
+
     public void setUpWorld() {
         Vec2 gravity = new Vec2(0.0f, 10.0f);
         world = new World(gravity);
@@ -35,7 +40,7 @@ public class LoadWorld {
     }
 
     public void setUpGround() {
-        Body ground = world.createBody(new BodyDef());
+        ground = world.createBody(new BodyDef());
         EdgeShape groundShape = new EdgeShape();
         groundShape.set(new Vec2(0, height - 2.4f), new Vec2(width, height - 2.4f));
         ground.createFixture(groundShape, 0.0f);

@@ -9,6 +9,9 @@ public class LoadImage {
     public Image bgGamePlay = assets().getImage("images/bg_gameplay.png");
     public Image bgStripe = assets().getImage("images/bg_stripe2.png");
 
+    public Image btnStartGame = assets().getImage("images/btn/btn_startgame.png");
+    public Image btnHighScore = assets().getImage("images/btn/btn_highscore.png");
+
     public Image[][] imgPipe = new Image[][]{
             {
                     assets().getImage("images/pipe/one_top.png"),
