@@ -34,7 +34,7 @@ public class Golang {
                 sprite.layer().setOrigin(sprite.width() / 2f, sprite.height() / 2f);
                 sprite.layer().setTranslation(x, y);
 
-                golangBody = initPhysicsBox(world, x, y, sprite.width()/2f, sprite.height()/2f);
+                golangBody = initPhysicsBox(world, x, y, sprite.width()/2f-5, sprite.height()/2f-5);
                 hasLoaded = true;
 
                 if(hasStart) {
@@ -46,7 +46,8 @@ public class Golang {
                     public void onKeyUp(Keyboard.Event event) {
                         if (event.key().equals(Key.SPACE)) {
                             if(hasStart) {
-                                golangBody.applyForce(new Vec2(0, -150), golangBody.getPosition());
+                             golangBody.setLinearVelocity(new Vec2(0, -5));
+//                                golangBody.applyForce(new Vec2(0, -120), golangBody.getPosition());
                             }
                         }
                     }

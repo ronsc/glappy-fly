@@ -53,7 +53,6 @@ public class Pipe {
         return imgLayer[index];
     }
 
-
     public Body initPhysicsBox(float x, float y, float w, float h) {
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyType.STATIC;
@@ -64,7 +63,7 @@ public class Pipe {
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = boxShape;
-        fixtureDef.density = 0.2f;
+        fixtureDef.density = 0.0f;
         fixtureDef.friction = 0.2f;
         box.createFixture(fixtureDef);
 

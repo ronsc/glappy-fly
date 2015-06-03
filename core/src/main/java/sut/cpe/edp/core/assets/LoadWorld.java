@@ -49,7 +49,7 @@ public class LoadWorld {
     public void setUpTop() {
         Body ground = world.createBody(new BodyDef());
         EdgeShape groundShape = new EdgeShape();
-        groundShape.set(new Vec2(0, 0), new Vec2(width, 0));
+        groundShape.set(new Vec2(0, 5 * this.M_PER_PIXEL), new Vec2(width, 5 * this.M_PER_PIXEL));
         ground.createFixture(groundShape, 0.0f);
     }
 }
