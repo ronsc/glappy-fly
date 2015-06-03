@@ -22,7 +22,7 @@ public class Glappy extends Game.Default {
 
     @Override
     public void init() {
-        ss.push(new HighScore(ss, new GameContext(), new LoadImage()));
+        ss.push(new StartScreen(ss, new GameContext(), new LoadImage()));
     }
 
     @Override
