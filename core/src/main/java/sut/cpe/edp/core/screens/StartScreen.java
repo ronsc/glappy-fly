@@ -67,12 +67,21 @@ public class StartScreen extends Screen {
         ImageLayer btnHighSocre = graphics().createImageLayer(loadImage.btnHighScore);
         this.layer.add(btnHighSocre.setTranslation(width() / 2f - 50, height() / 2f));
 
-        btnStartGame.addListener(new Pointer.Adapter(){
+        btnStartGame.addListener(new Pointer.Adapter() {
             @Override
             public void onPointerEnd(Pointer.Event event) {
                 gameContext.getLoadWorld().getWorld().destroyBody(g.body());
                 ss.remove(ss.top());
                 ss.push(new GamePlay(ss, gameContext, loadImage));
+            }
+        });
+
+        btnHighSocre.addListener(new Pointer.Adapter(){
+            @Override
+            public void onPointerEnd(Pointer.Event event) {
+                gameContext.getLoadWorld().getWorld().destroyBody(g.body());
+                ss.remove(ss.top());
+                ss.push(new HighScore(ss, gameContext, loadImage));
             }
         });
 

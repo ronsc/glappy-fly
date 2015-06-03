@@ -6,6 +6,7 @@ import playn.core.Game;
 import playn.core.util.Clock;
 import sut.cpe.edp.core.assets.GameContext;
 import sut.cpe.edp.core.assets.LoadImage;
+import sut.cpe.edp.core.screens.HighScore;
 import sut.cpe.edp.core.screens.StartScreen;
 import tripleplay.game.ScreenStack;
 
@@ -21,7 +22,7 @@ public class Glappy extends Game.Default {
 
     @Override
     public void init() {
-        ss.push(new StartScreen(ss, new GameContext(), new LoadImage()));
+        ss.push(new HighScore(ss, new GameContext(), new LoadImage()));
     }
 
     @Override
