@@ -14,6 +14,7 @@ import sut.cpe.edp.core.assets.GameContext;
 import sut.cpe.edp.core.assets.LoadImage;
 import sut.cpe.edp.core.assets.LoadWorld;
 import sut.cpe.edp.core.characters.Golang;
+import sut.cpe.edp.core.characters.Heart;
 import sut.cpe.edp.core.characters.Pipe;
 import tripleplay.game.Screen;
 import tripleplay.game.ScreenStack;
@@ -30,19 +31,22 @@ public class GamePlay extends Screen {
     private static LoadImage loadImage;
 
     private World world;
-    private boolean showDebugDraw = true;
+    private boolean showDebugDraw = false;
     private DebugDrawBox2D debugDraw;
 
     private LoadWorld loadWorld;
     private Golang g;
     private Pipe p;
+    private Heart h;
 
     private Layer bgStripeLayer1, bgStripeLayer2;
-    private Layer scoreLayer;
+    private Layer scoreLayer, heartLayer;
     private int t=0, score=0;
 
-    Body b[] = new Body[3];
-    HashMap<Body[], ImageLayer[]> pipeMap;
+    private boolean isContact = false;
+
+    private Body b[] = new Body[3];
+    private HashMap<Body[], ImageLayer[]> pipeMap;
 
     private GameContext gameContext;
 
@@ -78,6 +82,12 @@ public class GamePlay extends Screen {
         g.setHasStart(true);
         this.layer.add(g.layer());
 
+        // init character heart
+        h = new Heart(width() - 37, 30);
+        graphics().rootLayer().add(h.layer());
+        // init heart
+        updateHeart();
+
         // init score
         updateScore();
 
@@ -85,11 +95,9 @@ public class GamePlay extends Screen {
             @Override
             public void beginContact(Contact contact) {
                 if(contact.getFixtureA().getBody() == loadWorld.getGround() || contact.getFixtureB().getBody() == loadWorld.getGround()){
-                    System.out.println("GameOver");
-                    pipeMap = null;
-                    world = null;
-                    ss.remove(ss.top());
-                    ss.push(new GameOver(ss, gameContext, loadImage));
+                    isContact = true;
+                    gameContext.decreaseHeart();
+                    updateHeart();
                 } else if (contact.getFixtureA().getBody() == g.body() || contact.getFixtureB().getBody() == g.body()) {
                     for (Body[] pipeBody : pipeMap.keySet()) {
                         if (contact.getFixtureA().getBody() == pipeBody[1] || contact.getFixtureB().getBody() == pipeBody[1]) {
@@ -101,19 +109,25 @@ public class GamePlay extends Screen {
                                 || contact.getFixtureB().getBody() == pipeBody[0]
                                 || contact.getFixtureA().getBody() == pipeBody[2]
                                 || contact.getFixtureB().getBody() == pipeBody[2]) {
-                            System.out.println("GameOver");
-                            pipeMap = null;
-                            world = null;
-                            ss.remove(ss.top());
-                            ss.push(new GameOver(ss, gameContext, loadImage));
+                            isContact = true;
+                            gameContext.decreaseHeart();
+                            updateHeart();
                         }
                     }
+                }
+
+                if(gameContext.getHeart() <= 0){
+                    System.out.println("Game Over");
+                    pipeMap = null;
+                    world = null;
+                    ss.remove(ss.top());
+                    ss.push(new GameOver(ss, gameContext, loadImage));
                 }
             }
 
             @Override
             public void endContact(Contact contact) {
-
+                isContact = false;
             }
 
             @Override
@@ -134,11 +148,15 @@ public class GamePlay extends Screen {
     @Override
     public void update(int delta) {
         super.update(delta);
-        world.step(0.033f, 10, 10);
+        if(world != null)
+            world.step(0.033f, 10, 10);
 
         g.update(delta);
+        h.update(delta);
 
-        t += delta;
+        if(!isContact)
+            t += delta;
+
         if(t > gameContext.PIPE_TIME) {
             Random ran = new Random();
             int index = ran.nextInt(3);
@@ -161,9 +179,11 @@ public class GamePlay extends Screen {
         if(bgStripeLayer2.tx() == 0) {
             bgStripeLayer1.setTranslation(this.width(), bgStripeLayer1.ty());
         }
-        bgStripeLayer1.setTranslation(bgStripeLayer1.tx() - 2, bgStripeLayer1.ty());
-        bgStripeLayer2.setTranslation(bgStripeLayer2.tx() - 2, bgStripeLayer2.ty());
 
+        if(!isContact) {
+            bgStripeLayer1.setTranslation(bgStripeLayer1.tx() - 2, bgStripeLayer1.ty());
+            bgStripeLayer2.setTranslation(bgStripeLayer2.tx() - 2, bgStripeLayer2.ty());
+        }
     }
 
     @Override
@@ -177,23 +197,25 @@ public class GamePlay extends Screen {
             world.drawDebugData();
         }
 
-        for(Map.Entry<Body[], ImageLayer[]> pipe : pipeMap.entrySet()){
-            for(Body body : pipe.getKey()) {
-                body.setTransform(new Vec2(
-                        body.getPosition().x - gameContext.SPEED,
-                        body.getPosition().y
-                ),0);
+        if(!isContact) {
+            for (Map.Entry<Body[], ImageLayer[]> pipe : pipeMap.entrySet()) {
+                for (Body body : pipe.getKey()) {
+                    body.setTransform(new Vec2(
+                            body.getPosition().x - gameContext.SPEED,
+                            body.getPosition().y
+                    ), 0);
+                }
+
+                pipe.getValue()[0].setTranslation(
+                        pipe.getKey()[0].getPosition().x / LoadWorld.M_PER_PIXEL - 20,
+                        pipe.getKey()[0].getPosition().y / LoadWorld.M_PER_PIXEL - pipe.getValue()[0].height() / 2f
+                );
+
+                pipe.getValue()[1].setTranslation(
+                        pipe.getKey()[2].getPosition().x / LoadWorld.M_PER_PIXEL - 20,
+                        pipe.getKey()[2].getPosition().y / LoadWorld.M_PER_PIXEL - pipe.getValue()[1].height() / 2f
+                );
             }
-
-            pipe.getValue()[0].setTranslation(
-                    pipe.getKey()[0].getPosition().x / LoadWorld.M_PER_PIXEL - 20,
-                    pipe.getKey()[0].getPosition().y / LoadWorld.M_PER_PIXEL - pipe.getValue()[0].height()/2f
-            );
-
-            pipe.getValue()[1].setTranslation(
-                    pipe.getKey()[2].getPosition().x / LoadWorld.M_PER_PIXEL - 20,
-                    pipe.getKey()[2].getPosition().y / LoadWorld.M_PER_PIXEL - pipe.getValue()[1].height()/2f
-            );
         }
     }
 
@@ -201,12 +223,21 @@ public class GamePlay extends Screen {
         if(scoreLayer != null)
             scoreLayer.destroy();
 
-        scoreLayer = createTextLayer(gameContext.getScore(), 0xffFFFFFF);
-        this.layer.add(scoreLayer);
+        scoreLayer = createTextLayer(gameContext.getScore(), 0xffFFFFFF, 38);
+        graphics().rootLayer().add(scoreLayer);
     }
 
-    static Layer createTextLayer(int score, Integer color) {
-        Font font = graphics().createFont("Impact", Font.Style.PLAIN, 38);
+    public void updateHeart(){
+        if(heartLayer != null)
+            heartLayer.destroy();
+
+        heartLayer = createTextLayer(gameContext.getHeart(), 0xffCCFF00, 32);
+        heartLayer.setTranslation(width() - 45, 10);
+        graphics().rootLayer().add(heartLayer);
+    }
+
+    static Layer createTextLayer(int score, Integer color, int size) {
+        Font font = graphics().createFont("Impact", Font.Style.PLAIN, size);
         TextLayout layout = graphics().layoutText(String.valueOf(score), new TextFormat().withFont(font));
         CanvasImage image = graphics().createImage(
                 (int) Math.ceil(layout.width()) + 8,
