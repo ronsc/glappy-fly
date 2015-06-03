@@ -1,6 +1,7 @@
 package sut.cpe.edp.core.screens;
 
 import playn.core.*;
+import playn.core.util.Callback;
 import sut.cpe.edp.core.assets.GameContext;
 import sut.cpe.edp.core.assets.LoadImage;
 import tripleplay.game.Screen;
@@ -11,6 +12,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.Date;
 
+import static playn.core.PlayN.assets;
 import static playn.core.PlayN.currentTime;
 import static playn.core.PlayN.graphics;
 
@@ -30,7 +32,24 @@ public class GameOver extends Screen {
     public void wasShown() {
         super.wasShown();
 
-        WriteToTextFile();
+        assets().getText("textfile/score.txt", new Callback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println("old score : " + result);
+                if(gameContext.getScore() > Integer.valueOf(result)) {
+                    WriteToTextFile();
+                    System.out.println("New Score");
+                } else {
+                    System.out.println("noob");
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable cause) {
+                cause.printStackTrace();
+            }
+        });
+
 
         this.layer.add(graphics().createImageLayer(loadImage.bgStartScreen));
 
@@ -75,17 +94,17 @@ public class GameOver extends Screen {
         BufferedWriter writer = null;
         try {
             //create a temporary file
-            String timeLog = "score.txt";
+            String timeLog = "assets/src/main/resources/assets/textfile/score.txt";
             File logFile = new File(timeLog);
 
             // This will output the full path where the file will be written to...
             System.out.println(logFile.getCanonicalPath());
 
-            writer = new BufferedWriter(new FileWriter(logFile, true));
-            writer.write(new Date().toLocaleString());
-            writer.newLine();
+            writer = new BufferedWriter(new FileWriter(logFile));
+//            writer.write(new Date().toLocaleString());
+//            writer.newLine();
             writer.write(Integer.toString(gameContext.getScore()));
-            writer.newLine();
+//            writer.newLine();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

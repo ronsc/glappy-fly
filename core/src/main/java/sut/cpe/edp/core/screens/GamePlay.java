@@ -30,7 +30,7 @@ public class GamePlay extends Screen {
     private static LoadImage loadImage;
 
     private World world;
-    private boolean showDebugDraw = false;
+    private boolean showDebugDraw = true;
     private DebugDrawBox2D debugDraw;
 
     private LoadWorld loadWorld;
