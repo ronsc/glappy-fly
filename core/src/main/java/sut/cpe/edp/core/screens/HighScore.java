@@ -7,6 +7,11 @@ import sut.cpe.edp.core.assets.LoadImage;
 import tripleplay.game.Screen;
 import tripleplay.game.ScreenStack;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 import static playn.core.PlayN.assets;
 import static playn.core.PlayN.graphics;
 import static playn.core.PlayN.json;
@@ -32,20 +37,15 @@ public class HighScore extends Screen {
         base = graphics().createGroupLayer();
         base.add(graphics().createImageLayer(loadImage.bgHighScore));
 
-        assets().getText("textfile/score.txt", new Callback<String>() {
-            @Override
-            public void onSuccess(String result) {
-                Layer textScore = createTextLayer(result, 0xffFFFFFF);
-                textScore.setTranslation(width() / 2f, height() / 2f);
-                layer.add(textScore);
-                System.out.println(result);
-            }
-
-            @Override
-            public void onFailure(Throwable cause) {
-                cause.printStackTrace();
-            }
-        });
+        if(getHighScore() == -1){
+            Layer textScore = createTextLayer(String.valueOf(0), 0xffFFFFFF);
+            textScore.setTranslation(width() / 2f, height() / 2f);
+            base.add(textScore);
+        } else {
+            Layer textScore = createTextLayer(String.valueOf(getHighScore()), 0xffFFFFFF);
+            textScore.setTranslation(width() / 2f, height() / 2f);
+            base.add(textScore);
+        }
 
         Layer btnClose = graphics().createImageLayer(loadImage.btnClose);
         btnClose.setTranslation(width() - 100, 10);
@@ -54,7 +54,6 @@ public class HighScore extends Screen {
         btnClose.addListener(new Pointer.Adapter() {
             @Override
             public void onPointerEnd(Pointer.Event event) {
-                System.out.println("OK");
                 ss.remove(ss.top());
                 ss.push(new StartScreen(ss, gameContext, loadImage));
             }
@@ -78,5 +77,24 @@ public class HighScore extends Screen {
         image.canvas().fillText(layout, 0, 0);
 
         return graphics().createImageLayer(image).setTranslation(320 - layout.width()/2f, 130);
+    }
+
+    public int getHighScore() {
+        String path = "score.txt";
+        File file = new File(path);
+        int score = -1;
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = br.readLine()) != null) {
+                score = Integer.valueOf(line);
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return score;
     }
 }

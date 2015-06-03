@@ -7,14 +7,10 @@ import sut.cpe.edp.core.assets.LoadImage;
 import tripleplay.game.Screen;
 import tripleplay.game.ScreenStack;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Date;
 
-import static playn.core.PlayN.assets;
-import static playn.core.PlayN.currentTime;
-import static playn.core.PlayN.graphics;
+import static playn.core.PlayN.*;
 
 public class GameOver extends Screen {
 
@@ -32,24 +28,8 @@ public class GameOver extends Screen {
     public void wasShown() {
         super.wasShown();
 
-        assets().getText("textfile/score.txt", new Callback<String>() {
-            @Override
-            public void onSuccess(String result) {
-                System.out.println("old score : " + result);
-                if(gameContext.getScore() > Integer.valueOf(result)) {
-                    WriteToTextFile();
-                    System.out.println("New Score");
-                } else {
-                    System.out.println("noob");
-                }
-            }
-
-            @Override
-            public void onFailure(Throwable cause) {
-                cause.printStackTrace();
-            }
-        });
-
+        if(gameContext.getScore() > getOldScore() || getOldScore() == -1)
+            WriteToTextFile();
 
         this.layer.add(graphics().createImageLayer(loadImage.bgStartScreen));
 
@@ -94,7 +74,7 @@ public class GameOver extends Screen {
         BufferedWriter writer = null;
         try {
             //create a temporary file
-            String timeLog = "assets/src/main/resources/assets/textfile/score.txt";
+            String timeLog = "score.txt";
             File logFile = new File(timeLog);
 
             // This will output the full path where the file will be written to...
@@ -114,5 +94,25 @@ public class GameOver extends Screen {
             } catch (Exception e) {
             }
         }
+    }
+
+    public int getOldScore() {
+        String path = "score.txt";
+        File file = new File(path);
+        int score = -1;
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = br.readLine()) != null) {
+                score = Integer.valueOf(line);
+            }
+            br.close();
+        } catch (IOException e) {
+//            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+
+        return score;
     }
 }
